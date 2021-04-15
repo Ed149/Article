@@ -1,0 +1,251 @@
+html{
+    box-sizing: border-box;
+}
+*,*::after,*::before{
+    box-sizing: border-box;
+    padding:0;
+    margin: 0;
+}
+
+:root{
+    --darkGrayishB:hsl(217, 19%, 35%);
+    --darkBlue: hsl(214, 17%, 51%);
+    --grayBlue:hsl(212, 23%, 69%);
+    --lightGrayB:hsl(210, 46%, 95%);
+}
+
+body{
+    font-family: 'Manrope',sans-serif;
+    font-size: 0.8125rem;
+    height:100vh;
+    background-color: var(--lightGrayB);
+  
+}
+
+
+
+h1{
+    font-size: 1.125rem;
+    line-height: 1.562rem;
+}
+h2{
+    font-size:0.918rem;
+}
+.fw-500{
+    font-weight: 500;
+}
+.fw-700{
+    font-weight: 700;
+}
+img{
+    width:100%;
+}
+
+.card{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+
+    justify-content: center;
+}
+.card__content{
+    width:21.875rem;
+    background-color: #fff;
+    border-radius: 0.625rem;
+    overflow: hidden;
+    position: relative;
+}
+@media (min-width:48em){
+    .card__content{
+        display: flex;
+        width:50rem;
+        height:18.75rem;
+        overflow: visible;
+    }
+}
+
+.content__img{
+    width:100%;
+    height:12.5rem;
+    background-image: url('../img/drawers.jpg');
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+@media (min-width:48em){
+    .content__img{
+        height:100%;
+        border-bottom-left-radius: 0.625rem;
+        border-top-left-radius: 0.625rem;
+    }
+}
+
+
+
+
+.info__text{
+    padding:2.5rem 1.875rem 1.562rem 1.875rem;
+}
+.info__text h1{
+    color:var(--darkGrayishB);
+    margin-bottom: 1.25rem;   
+}
+
+.info__text h2{
+    color:var(--grayBlue);
+    
+    line-height:1.5rem;
+}
+.info__user{
+    display: flex;
+    justify-content: space-around;
+    padding:0.625rem 0 1.25rem 0;
+    align-items: center;
+    position:relative;
+}
+
+@media (min-width:48em){
+    .info__user{
+        left:-2.187rem;
+    }
+}
+.menu__share p{
+    color: var(--grayBlue);
+    letter-spacing: 0.5rem;
+    margin-right: 0.625rem;
+}
+.menu__share span:not(:last-of-type){
+    margin-right: 0.937rem;
+}
+.user__entry{
+    display: flex;
+}
+.user__profile{
+    background-image: url('../img/avatar-michelle.jpg');
+    width:2.5rem;
+    height:2.5rem;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    margin-right:0.625rem;
+}
+
+.entry__info p{
+    margin-top:0.187rem;
+    color:var(--grayBlue)    
+}
+
+
+.share{
+    width:2.187rem;
+    height:2.187rem;
+    background-color: var(--lightGrayB);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;  
+    position: relative;  
+    z-index:1;
+    cursor:pointer;
+}
+@media (min-width:48em){
+    #share{
+        right:-2.5rem;
+    }
+}
+@media (max-width:48em){
+    .menu__share{
+        position: absolute;
+        bottom: 0;
+        background-color: var(--darkGrayishB);
+        display: flex;
+        width:100%;
+        height:100%;
+
+        visibility: hidden;
+        align-items: center;
+        padding-left: 1.875rem;
+        
+    }
+}
+
+
+@media (min-width:48em){
+    #share{
+        position: relative;
+    }
+    .menu__share{
+        position:absolute;
+        box-shadow: 0.0625rem 0.0623rem 0.625rem var(--darkGrayishB);
+        display: flex;
+        background-color: var(--darkGrayishB);
+        top:-3.75rem;
+        right:-5rem;
+        width:15.625rem;
+        justify-content: center;
+        align-items: center;
+        border-radius:.3125rem;
+        padding:.625rem;
+        visibility: hidden;
+
+    }
+    .menu__share span:not(:last-of-type){
+        margin-right:1.25rem;
+    }
+    .menu__share::before{
+        
+        background-color: var(--darkGrayishB);
+        content: '';
+        position: absolute;
+        margin:auto;
+        top:0;right: 0;bottom:-2.8125rem;left:0;
+
+        width:.9375rem;
+        height: .9375rem;
+        transform: rotate(45deg);
+
+    }
+    
+}
+.show{
+    visibility: visible;
+    animation-name: show;
+    animation-duration: .5s;
+    animation-direction:alternate;
+    
+}
+@keyframes show{
+    from{
+        opacity: 0;
+    }
+    1%{
+        visibility: visible;
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+    
+}
+.hide{
+    animation-name: hide;
+    animation-duration: .5s;
+    animation-direction:alternate;
+}
+@keyframes hide{
+    from{
+        opacity: 1;
+        visibility: visible;
+    }
+    to{
+        opacity: 0;
+        visibility: hidden;
+    }
+    
+}
+.active{
+    color:white;
+    background-color: var(--darkBlue);
+}
